@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "pinger" do |p|
+    p.vm.network "forwarded_port", guest: 22, host: 2122
   end
 
 end
