@@ -7,6 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "1905.1"
 
   config.vm.define "listener", primary: true do |l|
+    l.vm.network "forwarded_port", guest: 22, host: 2022
   end
 
   config.vm.define "pinger" do |p|
